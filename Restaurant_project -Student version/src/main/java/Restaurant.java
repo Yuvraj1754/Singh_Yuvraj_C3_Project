@@ -66,11 +66,18 @@ public class Restaurant {
 
     }
 
-    public int cTov(List<String> orderItems){
-
-        return 1;
+    public int cTov(List<String> orderItems) {
+        int total = 0;
+        for (Item i : menu) {
+            for (String j : orderItems) {
+                if (i.getName() == j)
+                    total += i.getPrice();
+            }
+        }
+        return total;
     }
 }
+
 
 
 
